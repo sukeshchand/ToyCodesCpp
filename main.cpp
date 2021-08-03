@@ -1,5 +1,15 @@
 #include <iostream>
-int main(int, char* [])
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main()
 {
-    std::cout << "Log initialization failed: \n";
+    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
+    for (const string& word : msg)
+    {
+        cout << word << " ";
+    }
+    cout << endl;
 }
