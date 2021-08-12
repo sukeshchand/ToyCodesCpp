@@ -17,7 +17,7 @@ void StringArrayWithVectorView()
 
 void StringArrayWithVectorInput()
 {
-    vector<string> msg{};
+    std::vector<string> msg{};
     string inputString;
     for (size_t i = 0; i < 5; i++)
     {
@@ -33,7 +33,7 @@ void StringArrayWithVectorInput()
 
 void VectorTakeOnlyDistinct()
 {
-    vector<int> v = {1, 1, 3, 3, 3, 10, 1, 3, 3, 7, 7, 8}, i;
+    vector<int> v = {1, 5, 3, 3, 3, 10, 1, 3, 3, 7, 7, 8}, i;
 
     vector<int>::iterator ip;
 
@@ -71,6 +71,11 @@ void TakeCustomerDistinctIds()
         customers.push_back(customerRecord);
     }
     
+    customer customerRecord;
+    customerRecord.id = 10;
+    customerRecord.customer_id = 10;
+    customers.push_back(customerRecord);
+    
     cout << endl << "Customers ---------------" << endl;
     for (size_t i = 0; i < customerSize; i++)
     {
@@ -88,6 +93,7 @@ void TakeCustomerDistinctIds()
     // make unique
     cout << endl << "Customer Ids - unique ---------------" << endl;
     vector<int>::iterator iterator;
+    std::sort(customerIds.begin(), customerIds.end()); // Sort it first and try to extract unique otherwise the it wont list perfect unique list
     iterator = std::unique(customerIds.begin(), customerIds.begin() + customerIds.size());
     customerIds.resize(std::distance(customerIds.begin(), iterator));
 
